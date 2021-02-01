@@ -9,21 +9,21 @@ video {
     font-size: 1.3rem;
     // font-family: "Guardian Text Sans Web";
     color: black;
-    background: rgb(255, 255, 177);
+    background: #fcc242;
  }
 
 .audio-player {
     position: relative;
     padding: 1rem;
-    background-color: #f1f1f1;
-    align-items: flex-end;
-    justify-content: center;
+    // background-color: #f1f1f1;
+    // align-items: flex-end;
+    // justify-content: center;
 
     .ap-container {
         width: 100%;
         display: flex;
-        justify-content: space-between;
-
+        // justify-content: center
+        align-items: center;
     }
     
     h1 {
@@ -33,7 +33,7 @@ video {
         align-content: center;
         flex-direction: row;
         text-align: left;
-        width: 90%;
+        // width: 90%;
         margin: 0 0 .5rem;
         padding: 0;
         font-size: 1.25rem;
@@ -61,8 +61,11 @@ video {
         &:hover, &.active {
 
             svg {
-                fill: #69d1ca;
+                fill: #fcc242;
 
+            }
+            .st1 {
+                fill: black;
             }
         }
     }
@@ -93,8 +96,26 @@ video {
         text-align: center;
         padding: 10px;
         background: black;
-        color: yellow;
+        color: #fcc242;
 
+    }
+
+    .progress-bar {
+        padding-left: 10px;
+        width: 100%;
+        .track {
+            cursor: pointer;
+            height: 8px;
+            background-color: #f7ead0;
+            width: 90%;
+            margin: auto;
+            .current {
+                background-color: #fcc242;
+                height: 100%;
+                transition: width 500ms ease;
+                will-change: width;
+            }
+        }
     }
 
     

@@ -6,13 +6,69 @@
     padding: 0;
 }
 
+#Glabs {
+    background-color: #232323;
+}
+.clearfix {
+    &::after {
+        clear: both;
+        content: '';
+        display: block;
+    }
+}
+body, a {
+    color: white;
+}
 body {
     margin: 0;
+    background-color: #333;
+}
+
+
+.container {
+    padding: 1rem;
+    @include mq(desktop) {
+        padding: 2rem;
+    }
+}
+
+.audio-player {
+    width: 60%;
+}
+
+.d-flex {
+    display: flex;
+    &.d-center {
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .grid {
 
+    max-width: 1024px;
+    margin: auto;
+    header {
+        padding: 1rem;
+        @include mq(desktop) {
+            display: flex;
+            align-items: flex-end;
+
+            h1 {
+                margin-bottom: 0.4rem;
+            }
+        }
+
+    }
     .grid-container {
+        .wrap {
+            display: flex;
+            flex-wrap: wrap;
+            height: 100%;
+        }
+        a {
+            float: left;
+        }
         margin: 0;
         padding: 0;
         list-style: none;
@@ -21,15 +77,26 @@ body {
         // align-content: start;
         // flex-grow: 1;
 
-        .grid-item  {
+        .grid-item, li  {
             width: 50%;
             height:33vh;
-            border: 1px salmon solid;
+            border: 1px solid #97979738;
             display: inline-block;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-
+            vertical-align: top;
+            
+            // @include mq(desktop) {
+            //     // float: left;
+            //     width: 50%;
+            // }
+            // align-items: center;
+            // justify-content: center;
+            
+            &.expandable {
+                cursor: pointer;
+            }
+            &.auto-h {
+                height: auto;
+            }
             .tile-content {
                 display: flex;
                 justify-content: center;
@@ -42,7 +109,7 @@ body {
             }
 
             &.active {
-                cursor: default;
+                // cursor: default;
             }
             // @include mq($until: tablet) {
 
@@ -56,17 +123,55 @@ body {
         }
 
         .expander {
+            position: relative;
             float: left;
             width: 100%;
-            height: 30vh;
-            background-color: grey;
+            // min-height: 30vh;
+            background-color: #2e2e2e;
+            overflow: hidden;
 
             display: flex;
-            justify-content: center;
+            // justify-content: center;
             align-items: center;
-            
+            // visibility: hidden;
+            // display: none;
+
+            &.active {
+                // display: block;
+            }
+
+            .close {
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+                background: url('<%= path %>/close_icon.svg') no-repeat 50%;
+                background-size: contain;
+                width: 65px;
+                height: 65px;
+            }
+
+            .container {
+                display: flex;
+                width: calc(100% - 65px - 1rem);
+            }
+            h2 {
+                margin-top: -1.2rem;
+            }
+            img {
+                max-width: 100%;
+            }
+            .col1, .col2 {
+                width: 50%;
+                // display: inline-block;
+            }
+            .col2 {
+                padding-left: 1rem;
+            }
         }
 
+        .audio + .expander {
+                height: 33vh;
+        }
         // .grid-item:nth-child(3) {
         //     height: 75%;
         // }
@@ -86,5 +191,31 @@ body {
 
     }
 
+    .grid-item:nth-of-type(2) {
+        .bg {
+            height: 100%;
+            background: url("<%= path %>/tile1_bg.png");
+            background-size: cover;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        a {
+            width: 50%;
+        }
+    }
+    .grid-item:nth-of-type(4) {
+        .bg {
+            height: 100%;
+            background: url("<%= path %>/tile3_bg.png");
+            background-size: cover;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        a {
+            width: 50%;
+        }
+    }
 
 }

@@ -1,0 +1,134 @@
+{
+    "sheets": {
+        "global": [
+            {
+                "title": "<a\n                                        href=\"\"\n                                        taret=\"_blank\" >AMEX</a>",
+                "headline": "HEADLINE",
+                "standfirst": "Some of the most effective ways to reduce your carbon footprint can also be the easiest. Here are nine simple lifestyle adjustments that will help you do right by the planet.",
+                "shareUrl": "https://www.amex.com.au",
+                "shareTitle": "PowerShop - Power Potential",
+                "intro": "<p>Tackling climate change requires action from governments, corporations and individuals. There are no overnight solutions in the fight for climate preservation, but the good news is there are lots of easy lifestyle tweaks we can all make to lower our carbon footprints.</p><p>You probably know that a couple of big ways to make a difference are cutting back on air travel and avoiding car trips to work - two things most of us are doing a lot less of in 2020. But what other adjustments can we make to do our part? Here are nine pain-free ideas.</p>",
+                "assetPath": "",
+                "cta": "<p class=\"copy\">Go greener and <a href=\"https://www.powershop.com.au/\" target=\"_blank\">save</a>.</p>",
+                "footerCta": "<h3>Read more from our content series <a href=\"https://www.theguardian.com/powershop-power-potential\" class=\"ReadMore\"> Powershop: Power potential</a></h3>",
+                "cardPrompt": "Flip to find out more ..."
+            }
+        ],
+        "cards": [
+            {
+                "id": "1",
+                "type": "header",
+                "classes": "w-100  auto-h",
+                "expandable": "FALSE",
+                "bg": "",
+                "audio": "",
+                "content": "                <header class=\"container\">\r\n                            <h1>Meet the dairy farmers who want to be part of the climate solution</h1>\r\n                            <p>We take you to the farm gate to hear from the diary farmers around Australia who believe in a more sustainable, environmentally-friendly way of farming. A growing collection of sustainably minded farmers are committed to being part of the solution to the climate emergency.</p>\r\n                        </header>",
+                "expander": ""
+            },
+            {
+                "id": "2",
+                "type": "image",
+                "classes": "w-50",
+                "expandable": "TRUE",
+                "bg": "tile1_bg.png",
+                "audio": "",
+                "content": "<div class=\"bg container\">\n                            <a href=\"#\">How tree planting lorum ipsum sit dolor \u00bb</a>\n                        </div>",
+                "expander": "                <div class=\"col1 d-flex d-center\">\n                    <img class=\"feature\" src=\"https://placehold.it/460x340\" alt=\"\" width=\"465\" />\n                </div>\n                <div class=\"col2\">\n                    <h2>How tree planting lorum ipsum sit dolor</h2>\n                    <p>Consequat auctor. Nam luctus elit vel turpis hendrerit, in semper massa aliquam. Donec ultrices, erat non fringilla tristique, dolor quam dictum diam, at vulputate neque tortor id odio. Ut dapibus mollis leo, at dapibus nisl congue non. Duis imperdiet non turpis posuere convallis. Cras sollicitudin in nisi eu convallis. Quisque elementum, quam sit amet tristique pellentesque, eros justo viverra lacus, in egestas mi elit at orci. Proin ac gravida est. In a diam pulvinar metus bibendum porta ac ac mauris. Aenean consequat venenatis urna sit amet eleifend. Curabitur eget lectus vestibulum, aliquam mi vel, sagittis odio. Quisque ut felis faucibus orci lobortis vestibulum. Suspendisse venenatis maximus nunc eget ultrices. Praesent ac orci sed orci consectetur dignissim. Praesent efficitur, mauris sed sodales mattis, justo nulla iaculis risus, fringilla vehicula dolor mi at augue.</p>\n\n                </div>"
+            },
+            {
+                "id": "3",
+                "type": "audio",
+                "classes": "",
+                "expandable": "TRUE",
+                "bg": "",
+                "audio": "",
+                "content": "",
+                "expander": ""
+            },
+            {
+                "id": "4",
+                "type": "image",
+                "classes": "",
+                "expandable": "TRUE",
+                "bg": "",
+                "audio": "",
+                "content": "<div class=\"bg container\">\r\n                            <a href=\"#\">How tree planting lorum ipsum sit dolor \u00bb</a>\r\n                        </div>",
+                "expander": "                <div class=\"col1 d-flex d-center\">\n                    <img class=\"feature\" src=\"https://placehold.it/460x340\" alt=\"\" width=\"465\" />\n                </div>\n                <div class=\"col2\">\n                    <h2>How tree planting lorum ipsum sit dolor</h2>\n                    <p>Consequat auctor. Nam luctus elit vel turpis hendrerit, in semper massa aliquam. Donec ultrices, erat non fringilla tristique, dolor quam dictum diam, at vulputate neque tortor id odio. .</p>       <p>Consequat auctor. Nam luctus elit vel turpis hendrerit, in semper massa aliquam. Donec ultrices, erat non fringilla tristique, dolor quam dictum diam, at vulputate neque tortor id odio. .</p>\n\n                </div>"
+            },
+            {
+                "id": "5",
+                "type": "audio",
+                "classes": "",
+                "expandable": "TRUE",
+                "bg": "",
+                "audio": "",
+                "content": "",
+                "expander": ""
+            },
+            {
+                "id": "6",
+                "type": "image",
+                "classes": "",
+                "expandable": "TRUE",
+                "bg": "",
+                "audio": "",
+                "content": "",
+                "expander": ""
+            },
+            {
+                "id": "7",
+                "type": "image",
+                "classes": "w-50",
+                "expandable": "TRUE",
+                "bg": "",
+                "audio": "",
+                "content": "",
+                "expander": ""
+            },
+            {
+                "id": "8",
+                "type": "image",
+                "classes": "w-50",
+                "expandable": "TRUE",
+                "bg": "",
+                "audio": "",
+                "content": "",
+                "expander": ""
+            },
+            {
+                "id": "9",
+                "type": "image",
+                "classes": "",
+                "expandable": "TRUE",
+                "bg": "",
+                "audio": "",
+                "content": "",
+                "expander": ""
+            },
+            {
+                "id": "9",
+                "type": "image",
+                "classes": "",
+                "expandable": "TRUE",
+                "bg": "",
+                "audio": "",
+                "content": "",
+                "expander": ""
+            }
+        ],
+        "related": [
+            {
+                "content": "<a href='https://www.theguardian.com/powershop-power-potential/2020/nov/17/how-to-empower-your-kids-to-make-a-difference-on-climate-change'>How to empower your kids to make a difference on climate change</a>"
+            },
+            {
+                "content": "<a href='https://www.theguardian.com/powershop-power-potential/video/2020/oct/07/5-steps-to-reduce-your-carbon-footprint-and-save-money'>5 steps to reduce your carbon footprint and save money</a>"
+            },
+            {
+                "content": "<a href='https://www.theguardian.com/powershop-power-potential/2020/oct/07/how-to-do-a-wfh-audit-to-save-money-and-reduce-your-carbon-footprint'>How to do a WFH audit to save money and reduce your carbon footprint</a>"
+            },
+            {
+                "content": "<a href='https://www.theguardian.com/powershop-power-potential/2020/oct/06/why-saving-money-and-the-environment-are-not-mutually-exclusive-goals'>Why saving money and the environment are not mutually exclusive goals</a>"
+            }
+        ]
+    }
+}

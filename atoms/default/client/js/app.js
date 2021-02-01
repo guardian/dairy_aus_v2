@@ -22,7 +22,7 @@ class AppMain {
             .then(resp=> resp.json())
             .then(this.init)
             // .then(setTimeout(this.intro, 2000))
-            .then(this.intro)
+            // .then(this.intro)
             .catch(err => {
                 console.log(err);
             });
@@ -32,27 +32,34 @@ class AppMain {
         console.log(this, data, document.getElementById('ShareMe'));
         const sheet = data.sheets.global[0];
 
-        render(<SocialBar 
-            url={data.sheets.global[0].shareUrl}
-            title={data.sheets.global[0].shareTitle}
-        />, document.getElementById('ShareMe'));
 
-        $$('[data-dyn]').forEach((el) => {
-            // console.log(el)
-            el.innerHTML = sheet[el.dataset.dyn];
-        });
 
-        // $('body').addEventListener('click', e => {
-        //     console.log(e);
+        // render(<SocialBar 
+        //     url={data.sheets.global[0].shareUrl}
+        //     title={data.sheets.global[0].shareTitle}
+        // />, document.getElementById('ShareMe'));
+
+        // $$('[data-dyn]').forEach((el) => {
+        //     // console.log(el)
+        //     el.innerHTML = sheet[el.dataset.dyn];
         // });
 
-        render(<RelatedContent cards={data.sheets.related} />, $('.related'));
+        // render(<RelatedContent cards={data.sheets.related} />, $('.related'));
 
-        $$('.grid a, .related a').forEach(link => {
-            link.setAttribute('target', '_blank');
-        });
+        // $$('.grid a, .related a').forEach(link => {
+        //     link.setAttribute('target', '_blank');
+        // });
 
-        render( <AudioPlayer title="Les Shern on dealing with his diagnosis" src="<%= path %>/audio/clip_1_auspost.mp3" subs="<%= path %>/audio/clip_1_auspost.vtt" />, document.getElementById('aud1'));
+        render( <Map cards={data.sheets.cards.map(card=>{
+            for (let prop in card) {
+                console.log(prop, 'FALSE TRUE'.indexOf(card[prop]),card[prop]);
+                if (card[prop] !== '' && 'FALSE TRUE'.indexOf(card[prop]) >= 0) {
+                    card[prop] = card[prop] === 'FALSE' ? false : true;
+                } 
+            }
+            return card;
+
+        })} />, document.getElementById('root'));
     }
     
     intro() {
@@ -124,9 +131,19 @@ class AppMain {
 
 }
 
+import Map from "./ImageGrid";
+
+class AppMain2 {
+    constructor () {
+
+        render( <Map />, document.getElementById('root'));
+    }
+}
+
 window.addEventListener('load', e => {
-    // https://docs.google.com/spreadsheets/d/1YJuvtQuxlx7_gqAnBvicOIfs6JmU7ctfSvKMrgar7Wg/edit?usp=sharing
-    const app = new AppMain('https://interactive.guim.co.uk/docsdata/1YJuvtQuxlx7_gqAnBvicOIfs6JmU7ctfSvKMrgar7Wg.json');
+    // https://docs.google.com/spreadsheets/d/1pbTxsfU8O_RBB-RqieqCUzGLrC8gdMaLcHKuXKFA-fY/edit?usp=sharing
+    const app = new AppMain('https://interactive.guim.co.uk/docsdata/1pbTxsfU8O_RBB-RqieqCUzGLrC8gdMaLcHKuXKFA-fY.json');
+    // const app = new AppMain('<%= path %>/local.json');
 
 });
 
