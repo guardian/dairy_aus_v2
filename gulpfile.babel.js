@@ -41,6 +41,7 @@ const babelrc = JSON.parse(fs.readFileSync('.babelrc'));
 const presets = (babelrc.presets || []).concat(babelrc.env.client.presets);
 const plugins = (babelrc.plugins || []).concat(babelrc.env.client.plugins);
 
+const isWin = process.platform === 'win32';
 
 let webpackPlugins = [
     new webpack.LoaderOptionsPlugin({
@@ -111,7 +112,9 @@ const buildJS = () => {
             resolve: {
                 alias: {
                     "shared": path.resolve(__dirname, 'shared'),
-                    "data": path.resolve(__dirname, '../data')
+                    "data": path.resolve(__dirname, '../data'),
+                    react: 'preact/compat',
+                    'react-dom': 'preact/compat',  
                 }
             }
         }, webpack))
@@ -134,7 +137,7 @@ const buildCSS = () => {
             ]
         }).on("error", sass.logError))
         .pipe(rename((path) => {
-            path.dirname = path.dirname.replace(/client\/css/g, "");
+            path.dirname = path.dirname.replace( isWin ? /client\\css/g : /client\/css/g, "");
         }))
         .pipe(template({
             path: assetPath,

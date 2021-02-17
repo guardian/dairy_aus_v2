@@ -69,6 +69,13 @@ const AudioPlayer = (props) => {
         setAudio( aud );
     },[]);
 
+    useEffect(()=>{
+        if (isPlaying) {
+            audio.pause();
+            setIsPlaying(false);
+        }
+    },[props.stopPlay]);
+
     const handlePlayPause = () => {
         if (isPlaying) audio.pause();
         else audio.play();
@@ -93,7 +100,10 @@ const AudioPlayer = (props) => {
             </h1>
             <div className="ap-container">
 
-                <button onClick={handlePlayPause} className={'btn-play ' + (isPlaying ? 'active' : '')}>
+                <button 
+                    ariaRole="button"
+                    ariaLabel="toggle play"
+                    onClick={handlePlayPause} className={'btn-play ' + (isPlaying ? 'active' : '')}>
                     <div className="controls">
                         <svg viewBox="0 0 300 300"><g><path className="st0" d="M150.2,5C70.2,5,5.2,69.9,5.2,150c0,80.1,64.9,145,145,145c80.1,0,145-64.9,145-145 C295.2,69.9,230.3,5,150.2,5"></path>
                         <circle ref={progRef} className="progress" cx="150" cy="150" r="136" stroke="white" strokeWidth="26" strokeOpacity="0.6" strokeDasharray={dasharray} strokeDashoffset={ dasharray - Math.round(progress.percent * dasharray)} />
@@ -109,7 +119,10 @@ const AudioPlayer = (props) => {
                 </button>
 
                 { props.subs &&
-                <button onClick={handleSubsToggle}  className={'btn-subs ' + (subsActive ? 'active' : '')}>
+                <button 
+                ariaRole="button"
+                ariaLabel="toggle captions"
+                onClick={handleSubsToggle}  className={'btn-subs ' + (subsActive ? 'active' : '')}>
                     <svg viewBox="0 0 67 67">
                     <g transform="translate(0.5 0.5)">
                         <path d="M32.7289 0C14.653 0 0 14.655 0 32.7309C0 50.8017 14.653 65.4578 32.7289 65.4578C50.8048 65.4578 65.4578 50.8017 65.4578 32.7309C65.4578 14.655 50.8048 0 32.7289 0" transform="translate(1.7053026E-13 0.00020307692)" />
@@ -120,10 +133,13 @@ const AudioPlayer = (props) => {
                 </button>
                 }
                 <div className="progress-bar">
-                    <div className="track" ref={trackRef} onClick={handleSeek}><div className='current' style={{width: (progress.percent * 100) +'%'}}></div></div>
+                    <div 
+                    ariaRole="progress"
+                    ariaLabel="progress bar"
+                    className="track" ref={trackRef} onClick={handleSeek}><div className='current' style={{width: (progress.percent * 100) +'%'}}></div></div>
                     <div className="time d-flex" style="justify-content: space-between; padding: 5px 0;">
-                        <span>{getDuration(progress.currentTime)}</span>
-                        <span>{getDuration(progress.duration)}</span>
+                        <span ariaLabel="current time">{getDuration(progress.currentTime)}</span>
+                        <span ariaLabel="duration">{getDuration(progress.duration)}</span>
                     </div>
                 </div>
             </div>

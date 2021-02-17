@@ -1,10 +1,15 @@
 // import "./../../css/image_grid.scss";
 
+import gsap from "gsap/gsap-core";
+import { Sine } from "gsap/gsap-core";
 import { Component, render, h, Fragment } from "preact";
 import { useEffect, useRef, useState } from "preact/hooks";
+import { useSelector } from "react-redux";
+import Footer from "./Footer";
 
 import GridItem from "./GridItem";
 
+import Header from "./Header";
 
 const ImageGrid  = (props) => {
 
@@ -13,7 +18,6 @@ const ImageGrid  = (props) => {
     const handleTileExpand = (index) => {
         expandState[index] = !expandState[index];
         if (currentExpanded !== null && currentExpanded != index) expandState[currentExpanded] = 0;
-        // console.log(expandState, currentExpanded, index);
         setCurrentExpanded(index);
         setExpandState(expandState.slice());
     }
@@ -21,33 +25,54 @@ const ImageGrid  = (props) => {
     const [expandState, setExpandState] = useState( new Array(10).fill(0,0,10));
     const [currentExpanded, setCurrentExpanded] = useState(null);
 
-    const itemClasses = new Array(10).fill('',0,10);
-    itemClasses[0] = 'w-100';
-    itemClasses[1] = 'w-50';
-    itemClasses[6] = 'w-50';
-    itemClasses[7] = 'w-50';
-    // const gridItems = new Array(10).fill(0,0, 10).map((i, n)=> {
-    const gridItems = props.cards.map((i, n)=> {
-        console.log(i);
-        // return <GridItem className={"grid-item " + (itemClasses[n]) + (expandState[n] ? " active" : "")} key={n} index={n} onClick={ expandState[n] ? null : () => handleTileExpand(n)} expanded={expandState[n]}>Grid item {n}</GridItem>;
-        const content = i.content !== '' ? i.content : `Grid item ${n}`;
+    const cards = useSelector(state => {
+        // console.log(state, state.cards);
+        return state.cards || [];
+    });
+
+    const dataLoaded = useSelector(s=>s.dataLoaded);
+    
+    useEffect(()=>{
+
+        if (dataLoaded) {
+            gsap.to('#root', {autoAlpha: 1, ease: Sine.easeOut, delay: 1});
+            // gsap.from('.hero',{scale: 2, delay: 1})
+            gsap.from('.grid-container li', {alpha: 0, y: "50", stagger: 0.1, ease: Sine.easeOut, delay: 1.3});
+        }
+    },[dataLoaded]);
+
+    const gridItems = cards.map((card, i)=> {
+
+        for (let prop in card) {
+            if (card[prop] !== '' && 'FALSE TRUE'.indexOf(card[prop]) >= 0) {
+                card[prop] = card[prop] === 'FALSE' ? false : true;
+            } 
+        }
+
+        const content = card.content !== '' ? card.content : `Grid item ${i}`;
         const classNames = [
             'grid-item',
-            i.classes,
-            i.type
+            card.classes,
+            card.type
         ];
-        if (i.expandable) classNames.push('expandable');
-        if (expandState[n]) classNames.push('active');
+        if (card.expandable) classNames.push('expandable');
+        if (expandState[i]) classNames.push('active');
 
-        return <GridItem className={classNames.join(' ')} key={n} index={n} onClick={ i.expandable? () => handleTileExpand(n) : false} expanded={expandState[n]} toggleFn={handleTileExpand} data={i}>{content}</GridItem>;
+        return <GridItem className={classNames.join(' ')} key={i} index={i} onClick={ card.expandable? (e) => {e.preventDefault();handleTileExpand(i)} : false} expanded={expandState[i]} toggleFn={handleTileExpand} data={card}>{content}</GridItem>;
     });
-    // gridItems.push(<div key="11" className="expander">EXPANDED</div>);
+
     return (
-        <div className="grid" >
-            <ul className="grid-container">
-                {gridItems}
-            </ul>
-        </div>
+        <Fragment>
+            <Header />
+        
+            <div className="grid" >
+                <ul className="grid-container">
+                    {gridItems}
+                </ul>
+            </div>
+            
+            <Footer />
+        </Fragment>
     )
 }
 
