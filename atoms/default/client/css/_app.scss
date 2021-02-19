@@ -79,6 +79,10 @@ body {
 .audio-player {
     width: 100%;
     @include mq(tablet) {
+        width: 80%;
+
+    }
+    @include mq(desktop) {
         width: 60%;
 
     }
@@ -94,9 +98,11 @@ body {
 
 .hero {
     background-size: cover;
+    height: 60vh;
+    background-position: 29% 50%;
     @include mq(tablet) {
         background-position: 50%;
-        height: 62vh;
+        height: 70vh;
     }
 }
 .header {
@@ -113,6 +119,7 @@ body {
 h2 {
     font-size: 1.5em;
     line-height: 1.3;
+    margin-bottom: 0;
 }
 
 
@@ -264,6 +271,10 @@ h2 {
             .container {
                 display: flex;
                 width: calc(100% - 65px - 1rem);
+                @include mq(tablet) {
+                    padding: 2rem;
+
+                }
             }
             h2 {
                 margin-top: -1.2rem;

@@ -5,6 +5,7 @@ import { Sine } from "gsap/gsap-core";
 import { Component, render, h, Fragment } from "preact";
 import { useEffect, useRef, useState } from "preact/hooks";
 import { useSelector } from "react-redux";
+import RelatedContent from "../../../../shared/js/RelatedContent";
 import Footer from "./Footer";
 
 import GridItem from "./GridItem";
@@ -28,6 +29,10 @@ const ImageGrid  = (props) => {
     const cards = useSelector(state => {
         // console.log(state, state.cards);
         return state.cards || [];
+    });
+    const related = useSelector(state => {
+        // console.log(state, state.cards);
+        return state.related || [];
     });
 
     const dataLoaded = useSelector(s=>s.dataLoaded);
@@ -72,6 +77,10 @@ const ImageGrid  = (props) => {
             </div>
             
             <Footer />
+            <div className="container max-container">
+            <RelatedContent cards={related} />
+
+            </div>
         </Fragment>
     )
 }

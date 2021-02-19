@@ -1309,7 +1309,7 @@
           font-size: 1rem;
           font-weight: 800;
           color: #131A1C; }
-      #Glabs #Footer .InnerFooter {
+      #Glabs .InnerFooter {
         width: 100%;
         display: -ms-flexbox;
         display: flex;
@@ -1323,7 +1323,7 @@
             align-items: center;
         -ms-flex-line-pack: space-evenly;
             align-content: space-evenly; }
-        #Glabs #Footer .InnerFooter .PartnerZoneLinks {
+        #Glabs .InnerFooter .PartnerZoneLinks {
           -ms-flex-positive: 1;
               flex-grow: 1;
           -ms-flex-preferred-size: 49%;
@@ -1344,7 +1344,7 @@
               align-content: center;
           background-color: #f6f6f6;
           color: #131A1C; }
-          #Glabs #Footer .InnerFooter .PartnerZoneLinks a {
+          #Glabs .InnerFooter .PartnerZoneLinks a {
             -ms-flex-positive: 1;
                 flex-grow: 1;
             padding: .1rem .5rem 1rem;
@@ -1358,7 +1358,7 @@
             -o-transition: all .5s;
             transition: all .5s;
             font-weight: 100; }
-          #Glabs #Footer .InnerFooter .PartnerZoneLinks a:hover {
+          #Glabs .InnerFooter .PartnerZoneLinks a:hover {
             text-shadow: 0 0 0 rgba(0, 0, 0, 0.35);
             text-decoration: underline; }
       @media only screen and (min-width: 1824px) {
@@ -1489,7 +1489,7 @@
           vertical-align: top;
           width: 0.45em; }
     @media only screen and (max-width: 576px) {
-      #Glabs #Footer .InnerFooter {
+      #Glabs .InnerFooter {
         display: -ms-flexbox;
         display: flex;
         -ms-flex-direction: row;

@@ -14,7 +14,7 @@ const GridItem = (props) => {
                     <a ref={elRef} 
                     onMouseLeave={handleScaleDown}
                     onMouseOver={handleScaleUp} 
-                    className="bg container" style={`background-image: url(<%= path %>/${props.data.bg})`} href="#">
+                    className="bg container" style={`background-image: linear-gradient(0deg, #0009, transparent 65%), url(<%= path %>/${props.data.bg})`} href="#">
                         <h2>{props.data.content}</h2>
                     </a>
                 )
