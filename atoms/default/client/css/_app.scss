@@ -38,6 +38,14 @@ body {
     visibility: hidden;
 }
 
+#Glabs #Footer {
+    padding: calc(1rem - .5%);
+    h3 {
+        font-weight: normal;
+        padding: 7px 0.5% 5px;
+    }
+}
+
 .container {
     padding: 1rem;
     // @include mq(desktop) {

@@ -77,7 +77,9 @@ const ImageGrid  = (props) => {
             </div>
             
             <Footer />
-            <div className="container max-container">
+
+            <div id="Footer" className="container max-container">
+                <h3>Read more from our content series <strong>Dairy Australia: Green solutions</strong></h3>
             <RelatedContent cards={related} />
 
             </div>
