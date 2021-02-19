@@ -10,7 +10,7 @@ const Header  = (props) => {
 
     return (
         <Fragment>
-        <div className ="hero" style="background-image: url(<%= path %>/header.jpg); height:40vh" alt="" />
+        <div className ="hero" style="background-image: url(<%= path %>/header.jpg);" alt="" />
             <div className="max-container">
                 <div className="header">
                     <header>
