@@ -397,3 +397,11 @@ h2 {
         }
     }
 }
+
+#Glabs .InnerFooter .PartnerZoneLinks {
+    flex-basis: fill;
+
+    @include mq(tablet) {
+        flex-basis: 49%;
+    }
+}
