@@ -6,7 +6,9 @@ import SocialBar from 'shared/js/SocialShare';
 
 const Header  = (props) => {
 
-    const data = useSelector(state=>state.global ? state.global[0] : {headline:'',standfirst:'',shareUrl:"", shareTitle:""});
+    const data = useSelector(state=>state.global ? state.global[0] : {headline:'',standfirst:'',shareUrl:"", shareTitle:"", logoLink:"https://www.dairy.com.au/dairy-matters"});
+
+    const shareUrl = location.href;
 
     return (
         <Fragment>
@@ -19,8 +21,8 @@ const Header  = (props) => {
                     </header>
                     <div className='client'>
                         <p>Paid for by</p>
-                        <img src="<%= path %>/da_logo.svg" width="120" alt="" />
-                        <SocialBar url={data.shareUrl} title={data.shareTitle} />
+                        <a href={data.logoLink} target="_blank" title="Dairy Australia"><img src="<%= path %>/da_logo.svg" width="120" alt="" /></a>
+                        <SocialBar url={shareUrl} title={data.shareTitle} />
                     </div>
             </div>
         </div>

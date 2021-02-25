@@ -36,9 +36,11 @@ const ImageGrid  = (props) => {
     });
 
     const dataLoaded = useSelector(s=>s.dataLoaded);
+
+    const globalData = useSelector(s=> s.dataLoaded ? s.global[0] : {related:""});
     
     useEffect(()=>{
-
+        
         if (dataLoaded) {
             gsap.to('#root', {autoAlpha: 1, ease: Sine.easeOut, delay: 1});
             // gsap.from('.hero',{scale: 2, delay: 1})
@@ -79,7 +81,7 @@ const ImageGrid  = (props) => {
             <Footer />
 
             <div id="Footer" className="container max-container">
-                <h3>Read more from our content series <strong>Dairy Australia: Green solutions</strong></h3>
+                <div dangerouslySetInnerHTML={{__html: globalData.related}}></div>
             <RelatedContent cards={related} />
 
             </div>

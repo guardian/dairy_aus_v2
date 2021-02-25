@@ -10,6 +10,8 @@ import Grid from "./ImageGrid";
 import { Provider } from "react-redux";
 import store from "./store";
 
+const g = gsap;
+const tmp = Sine;
 
 render( 
     <Provider store={store} >
