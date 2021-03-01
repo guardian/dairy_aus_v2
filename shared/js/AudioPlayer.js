@@ -145,7 +145,7 @@ const AudioPlayer = (props) => {
                 </button>
                 }
             </div>
-                <video src={props.src} ref={audRef} playsInline width="100%" height="80">
+                <video src={props.src} ref={audRef} playsInline width="100%" height="80" crossOrigin="anonymous">
                     { props.subs && <track src={props.subs} kind="subtitles" srcLang="en" label="English" default /> }
                 </video>
                 { props.subs && subsActive &&
